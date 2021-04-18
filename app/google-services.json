@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "791357971725",
+    "firebase_url": "https://kanban-471ce-default-rtdb.firebaseio.com",
+    "project_id": "kanban-471ce",
+    "storage_bucket": "kanban-471ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791357971725:android:568d2804d64fcb5500a444",
+        "android_client_info": {
+          "package_name": "com.example.movieapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791357971725-rf74rs1l78r4f7l97pbdd5qc8ud0k96o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdMkkRyQWdmjiOHgKQTrL15aw6iTlffJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791357971725-rf74rs1l78r4f7l97pbdd5qc8ud0k96o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

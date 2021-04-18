@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home3">
+    <fragment
+        android:id="@+id/home3"
+        android:name="com.example.movieapp.ui.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home3_to_movieDetails"
+            app:destination="@id/movieDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetails"
+        android:name="com.example.movieapp.ui.MoviesDetailsFragment"
+        android:label="MovieDetails"
+        tools:layout="@layout/movie_details">
+        <action
+            android:id="@+id/action_movieDetails_to_actorDetails"
+            app:destination="@id/actorDetails" />
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/actorDetails"
+        android:name="com.example.movieapp.ui.ActorDetailsFragment"
+        android:label="ActorDetails"
+        tools:layout="@layout/fragment_actor_details">
+        <action
+            android:id="@+id/action_actorDetails_to_movieDetails2"
+            app:destination="@id/movieDetails" />
+        <argument
+            android:name="personId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favourite"
+        android:name="com.example.movieapp.ui.FavouriteFragment"
+        android:label="Favorite"
+        tools:layout="@layout/fragment_favourite">
+        <action
+            android:id="@+id/action_favorite_to_movieDetails"
+            app:destination="@id/movieDetails" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.movieapp.ui.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile"/>
+
+    <fragment
+        android:id="@+id/searchMovies"
+        android:name="com.example.movieapp.ui.SearchMoviesFragment"
+        android:label="SearchMovies"
+        tools:layout="@layout/fragment_search_movies">
+        <action
+            android:id="@+id/action_searchMovies_to_movieDetails"
+            app:destination="@id/movieDetails" />
+    </fragment>
+
+
+
+</navigation>
