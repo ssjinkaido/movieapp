@@ -9,6 +9,8 @@
 *   Each people have to login and have their own favourite list(not using local database like mysql)
 *   Database using here is Firebase
 *   A simple profile fragment displays username of the user
-*   Still No pagination(still trying!)
+*   Jay, we have pagination, although it is not optimised
 *   Get used to Retrofit, Observable, Gson, Fragment Navigation
+*   Display reviews from app's users
+*   Edit Profile
 *   Everything is strictly using MVVM pattern
