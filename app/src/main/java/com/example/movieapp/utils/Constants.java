@@ -13,6 +13,10 @@ public class Constants {
     public static final String API_KEY = "243f5608aba7f3dd1d5a93832a613051";
     public static final String BaseURL = "https://api.themoviedb.org/3/";
     public static final String ImageBaseURL = "https://image.tmdb.org/t/p/original";
+    public static final String Popular = "Popular";
+    public static final String Upcoming = "Upcoming";
+    public static final String Current = "Current";
+    public static final String TopRated = "TopRated";
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public static boolean isNetworkAvailable(Context context) {
@@ -26,6 +30,7 @@ public class Constants {
                 (mCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
                         mCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR));
     }
+
     public static HashMap<Integer,String> getGenreMap(){
         HashMap<Integer,String> genreMap = new HashMap<>();
         genreMap.put(28,"Action");

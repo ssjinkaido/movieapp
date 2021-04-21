@@ -64,7 +64,7 @@ public class FavouriteFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         favouriteList = new ArrayList<>();
-        favouriteViewModel=new ViewModelProvider(FavouriteFragment.this).get(FavouriteViewModel.class);
+        favouriteViewModel = new ViewModelProvider(FavouriteFragment.this).get(FavouriteViewModel.class);
         initRecyclerView();
         binding.clearFavList.setOnClickListener(new View.OnClickListener() {
 
@@ -79,7 +79,7 @@ public class FavouriteFragment extends Fragment {
         });
     }
 
-    private void observeData(){
+    private void observeData() {
         favouriteViewModel.getAllFavourites().observe(getViewLifecycleOwner(), new Observer<List<Favourite>>() {
             @Override
             public void onChanged(List<Favourite> favourites) {

@@ -3,6 +3,7 @@ package com.example.movieapp.viewmodel;
 import android.util.Log;
 
 import androidx.hilt.lifecycle.ViewModelInject;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -266,6 +267,22 @@ public class HomeViewModel extends ViewModel {
                     }
                 }).observeOn(AndroidSchedulers.mainThread()).subscribe(result -> queriesMovies.setValue(result),
                         error -> Log.e(TAG, "getPopularMovies: " + error.getMessage())));
+    }
+
+    public LiveData<MovieResponse> getPopularMovie(String api_key, int page){
+        return repository.getPopularMovies(api_key,page);
+    }
+
+    public LiveData<MovieResponse> getTopRatedMovie(String api_key, int page) {
+        return repository.getTopRatedMovies(api_key, page);
+    }
+
+    public LiveData<MovieResponse> getCurrentlyShowingMovie(String api_key, int page) {
+        return repository.getCurrentlyShowingMovies(api_key, page);
+    }
+
+    public LiveData<MovieResponse> getUpcomingMovie(String api_key, int page) {
+        return repository.getUpcomingMovies(api_key, page);
     }
 
     @Override

@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/image_author"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -26,7 +26,7 @@
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@drawable/ic_account_circle_black" />
+                android:src="@drawable/ic_account_circle_black" />
 
             <TextView
                 android:id="@+id/text_author"
@@ -35,7 +35,7 @@
                 android:layout_marginStart="16dp"
                 android:padding="8dp"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-                android:textColor="#DE000000"
+                android:textColor="#0BD8F3"
                 android:textSize="18dp"
                 app:layout_constraintStart_toEndOf="@+id/image_author"
                 app:layout_constraintTop_toTopOf="@+id/image_author"
@@ -54,6 +54,21 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/text_author"
                 app:layout_constraintTop_toBottomOf="@+id/text_author"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/text_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textColor="#DE000000"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_author"
+                app:layout_constraintTop_toBottomOf="@+id/text_content"
                 tools:text="@tools:sample/lorem" />
 
 

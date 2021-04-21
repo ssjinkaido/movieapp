@@ -1,6 +1,9 @@
 package com.example.movieapp.repository;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.example.movieapp.model.Actor;
 import com.example.movieapp.model.Favourite;
@@ -16,6 +19,9 @@ import java.util.HashMap;
 import javax.inject.Inject;
 
 import io.reactivex.rxjava3.core.Observable;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.http.QueryMap;
 
 public class Repository {
@@ -61,5 +67,73 @@ public class Repository {
 
     public Observable<JsonObject> getMoviesBySearch(HashMap<String, String> map) {
         return movieApiService.getMoviesBySearch(map);
+    }
+
+    public LiveData<MovieResponse>getPopularMovies(String api_key,int page){
+        MutableLiveData<MovieResponse>data=new MutableLiveData<>();
+        movieApiService.getPopularMovies(api_key,page).enqueue(new Callback<MovieResponse>() {
+            @Override
+            public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
+                data.setValue(response.body());
+                Log.d(TAG,"Most popular: "+data);
+            }
+
+            @Override
+            public void onFailure(Call<MovieResponse> call, Throwable t) {
+
+            }
+        });
+        return data;
+    }
+
+    public LiveData<MovieResponse>getCurrentlyShowingMovies(String api_key,int page){
+        MutableLiveData<MovieResponse>data=new MutableLiveData<>();
+        movieApiService.getCurrentlyShowingMovies(api_key,page).enqueue(new Callback<MovieResponse>() {
+            @Override
+            public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
+                data.setValue(response.body());
+                Log.d(TAG,"Most popular: "+data);
+            }
+
+            @Override
+            public void onFailure(Call<MovieResponse> call, Throwable t) {
+
+            }
+        });
+        return data;
+    }
+
+    public LiveData<MovieResponse>getTopRatedMovies(String api_key,int page){
+        MutableLiveData<MovieResponse>data=new MutableLiveData<>();
+        movieApiService.getTopRatedMovies(api_key,page).enqueue(new Callback<MovieResponse>() {
+            @Override
+            public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
+                data.setValue(response.body());
+                Log.d(TAG,"Most popular: "+data);
+            }
+
+            @Override
+            public void onFailure(Call<MovieResponse> call, Throwable t) {
+
+            }
+        });
+        return data;
+    }
+
+    public LiveData<MovieResponse>getUpcomingMovies(String api_key,int page){
+        MutableLiveData<MovieResponse>data=new MutableLiveData<>();
+        movieApiService.getUpcomingMovies(api_key,page).enqueue(new Callback<MovieResponse>() {
+            @Override
+            public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
+                data.setValue(response.body());
+                Log.d(TAG,"Most popular: "+data);
+            }
+
+            @Override
+            public void onFailure(Call<MovieResponse> call, Throwable t) {
+
+            }
+        });
+        return data;
     }
 }

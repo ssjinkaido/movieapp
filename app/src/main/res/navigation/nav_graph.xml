@@ -12,6 +12,23 @@
         <action
             android:id="@+id/action_home3_to_movieDetails"
             app:destination="@id/movieDetails" />
+        <action
+            android:id="@+id/action_home3_to_movies"
+            app:destination="@id/movies" />
+    </fragment>
+    <fragment
+        android:id="@+id/movies"
+        android:name="com.example.movieapp.ui.MoviesFragment"
+        android:label="Movies"
+        tools:layout="@layout/fragment_movies">
+        <action
+            android:id="@+id/action_movies_to_movieDetails"
+            app:destination="@id/movieDetails"
+            app:enterAnim="@anim/fragment_open_enter" />
+        <argument
+            android:name="movieCategory"
+            android:defaultValue="Popular"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/movieDetails"
@@ -52,7 +69,8 @@
         android:id="@+id/profile"
         android:name="com.example.movieapp.ui.ProfileFragment"
         android:label="Profile"
-        tools:layout="@layout/fragment_profile"/>
+        tools:layout="@layout/fragment_profile"></fragment>
+
 
     <fragment
         android:id="@+id/searchMovies"

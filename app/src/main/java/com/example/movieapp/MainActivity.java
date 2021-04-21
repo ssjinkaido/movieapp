@@ -51,13 +51,13 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         navController.navigate(R.id.home3);
                         return true;
-                    case 1:
+                    case 2:
                         navController.navigate(R.id.favourite);
                         return true;
-                    case 2:
+                    case 3:
                         navController.navigate(R.id.profile);
                         return true;
-                    case 3:
+                    case 4:
                         navController.navigate(R.id.searchMovies);
                         return true;
                 }

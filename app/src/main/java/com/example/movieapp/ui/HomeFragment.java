@@ -9,6 +9,7 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -72,6 +73,7 @@ public class HomeFragment extends Fragment {
         observeData();
         getMoviesList();
         setUpRecyclerViewsAndViewPager();
+        setUpOnClick();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -149,6 +151,41 @@ public class HomeFragment extends Fragment {
             }
         });
 
+    }
+
+    private void setUpOnClick() {
+        binding.viewAllCurrent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HomeFragmentDirections.ActionHome3ToMovies action = HomeFragmentDirections.actionHome3ToMovies();
+                action.setMovieCategory(Constants.Current);
+                Navigation.findNavController(view).navigate(action);
+            }
+        });
+        binding.viewAllTopRated.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HomeFragmentDirections.ActionHome3ToMovies action = HomeFragmentDirections.actionHome3ToMovies();
+                action.setMovieCategory(Constants.TopRated);
+                Navigation.findNavController(view).navigate(action);
+            }
+        });
+        binding.viewAllPopular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HomeFragmentDirections.ActionHome3ToMovies action = HomeFragmentDirections.actionHome3ToMovies();
+                action.setMovieCategory(Constants.Popular);
+                Navigation.findNavController(view).navigate(action);
+            }
+        });
+        binding.viewAllUpcoming.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HomeFragmentDirections.ActionHome3ToMovies action = HomeFragmentDirections.actionHome3ToMovies();
+                action.setMovieCategory(Constants.Upcoming);
+                Navigation.findNavController(view).navigate(action);
+            }
+        });
     }
 
     @Override

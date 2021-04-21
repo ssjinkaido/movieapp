@@ -8,11 +8,13 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.movieapp.databinding.HomeMovieItemBinding;
 import com.example.movieapp.model.Favourite;
+import com.example.movieapp.ui.FavouriteFragmentDirections;
 import com.example.movieapp.utils.Constants;
 
 import java.util.ArrayList;
@@ -45,14 +47,14 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.Favo
 
         Glide.with(mContext).load(Constants.ImageBaseURL + favouritesList.get(position).getPoster_path())
                 .into(holder.binding.movieItemImage);
-//        holder.binding.movieItemRelativeLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                FavoriteDirections.ActionFavoriteToMovieDetails action =
-//                        FavoriteDirections.actionFavoriteToMovieDetails(moviesList.get(position).getId());
-//                Navigation.findNavController(view).navigate(action);
-//            }
-//        });
+        holder.binding.movieItemRelativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FavouriteFragmentDirections.ActionFavoriteToMovieDetails action =
+                        FavouriteFragmentDirections.actionFavoriteToMovieDetails(Integer.parseInt(favouritesList.get(position).getId()));
+                Navigation.findNavController(view).navigate(action);
+            }
+        });
     }
 
     @Override

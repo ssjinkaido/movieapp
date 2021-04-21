@@ -9,8 +9,8 @@ import com.google.gson.JsonObject;
 import java.util.HashMap;
 
 import io.reactivex.rxjava3.core.Observable;
-import io.reactivex.rxjava3.core.Flowable;
 
+import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -46,5 +46,17 @@ public interface MovieApiService {
 
     @GET("search/movie")
     Observable<JsonObject> getMoviesBySearch(@QueryMap HashMap<String, String> queries);
+
+    @GET("movie/popular")
+    Call<MovieResponse> getPopularMovies(@Query("api_key") String api_key, @Query("page") int page);
+
+    @GET("movie/upcoming")
+    Call<MovieResponse> getUpcomingMovies(@Query("api_key") String api_key, @Query("page") int page);
+
+    @GET("movie/top_rated")
+    Call<MovieResponse> getTopRatedMovies(@Query("api_key") String api_key, @Query("page") int page);
+
+    @GET("movie/now_playing")
+    Call<MovieResponse> getCurrentlyShowingMovies(@Query("api_key") String api_key, @Query("page") int page);
 
 }
