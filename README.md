@@ -13,4 +13,5 @@
 *   Get used to Retrofit, Observable, Gson, Fragment Navigation
 *   Display reviews from app's users
 *   Edit Profile
+*   Download Poster or Actor's Profile Picture
 *   Everything is strictly using MVVM pattern
